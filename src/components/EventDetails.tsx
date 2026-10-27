@@ -104,7 +104,6 @@ export function EventDetails() {
                     </span>
                   ))}
                 </address>
-                <p className="mt-2 text-sm font-semibold text-plum/60">Our home in Dublin</p>
 
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <a
@@ -120,7 +119,7 @@ export function EventDetails() {
               </>
             ) : (
               <p className="mt-5 text-lg font-semibold italic leading-snug text-plum/70">
-                Our home in Dublin. We'll pop the full address and Eircode on WhatsApp.
+                We'll pop the full address and Eircode on WhatsApp.
               </p>
             )}
           </div>

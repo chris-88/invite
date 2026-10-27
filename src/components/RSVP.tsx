@@ -64,7 +64,7 @@ export function RSVP() {
               autoCapitalize="words"
               enterKeyHint="done"
               maxLength={40}
-              placeholder="e.g. Ava"
+              placeholder="e.g. Harlyn"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="min-h-14 w-full rounded-2xl border-[3px] border-transparent bg-white px-5 font-sans text-lg font-bold text-plum placeholder:font-semibold placeholder:text-plum/40 focus:border-butter focus:outline-none"
