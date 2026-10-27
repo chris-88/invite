@@ -35,18 +35,18 @@ export interface PartyConfig {
 
 export const party = {
   birthdayGirl: 'Harlyn',
-  title: "Harlyn's Birthday Bash!",
+  title: "Harlyn's Birthday Party!",
   theme: 'Pizza, Movies, Games & Sleepover',
   date: '2026-10-30',
-  startTime: '',
+  startTime: '17:00',
   collectionDate: '2026-10-31',
-  collectionTime: '',
+  collectionTime: '10:00',
   address: {
-    line1: '',
-    line2: '',
-    eircode: '',
+    line1: '22 Greenville Terrace',
+    line2: 'South Circular Road',
+    eircode: 'D08 T6C9',
   },
-  rsvpPhone: '',
+  rsvpPhone: '+353876968718',
   parentName: 'Chris',
 } satisfies PartyConfig
 
