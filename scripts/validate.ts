@@ -17,8 +17,9 @@ const problems: string[] = missing.map((field) => `${field} is blank`)
 if (party.startTime && !/^\d{1,2}:\d{2}$/.test(party.startTime)) problems.push('startTime must be 24-hour "HH:MM"')
 if (party.collectionTime && !/^\d{1,2}:\d{2}$/.test(party.collectionTime))
   problems.push('collectionTime must be 24-hour "HH:MM"')
-if (party.rsvpPhone && !/^\d{8,15}$/.test(party.rsvpPhone))
-  problems.push('rsvpPhone must be digits only in international format, e.g. 353871234567')
+// The link builder strips "+", spaces and dashes, so accept those here too.
+if (party.rsvpPhone && !/^\d{8,15}$/.test(party.rsvpPhone.replace(/\D/g, '')))
+  problems.push('rsvpPhone must be an international number, e.g. 353871234567 or +353 87 123 4567')
 if (party.address.eircode && !/^[A-Z0-9]{3}\s?[A-Z0-9]{4}$/i.test(party.address.eircode))
   problems.push('address.eircode does not look like an Eircode, e.g. "D06 X1Y2"')
 

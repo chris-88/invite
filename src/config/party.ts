@@ -27,7 +27,7 @@ export interface PartyConfig {
     /** Eircode, e.g. "D06 X1Y2" */
     eircode: string
   }
-  /** WhatsApp number in international format, digits only. e.g. "353871234567" */
+  /** WhatsApp number in international format, e.g. "353871234567" or "+353 87 123 4567" */
   rsvpPhone: string
   /** Who the RSVP message is addressed to. */
   parentName: string
