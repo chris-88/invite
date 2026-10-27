@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bubblegum: #ff6fb5;
+  --color-bubblegum-deep: #e8428f;
+  --color-lavender: #c7b8ff;
+  --color-lavender-soft: #ede8ff;
+  --color-butter: #ffe275;
+  --color-butter-soft: #fff3bf;
+  --color-cream: #fff8ec;
+  --color-plum: #3b1d5e;
+  --color-plum-deep: #2a1244;
+
+  --font-display: 'Fredoka', 'Nunito', ui-rounded, system-ui, sans-serif;
+  --font-sans: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --shadow-pop: 0 10px 0 0 var(--color-plum);
+  --shadow-pop-sm: 0 6px 0 0 var(--color-plum);
+  --shadow-soft: 0 18px 40px -18px rgb(59 29 94 / 0.25);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-twinkle: twinkle 2.6s ease-in-out infinite;
+  --animate-wobble: wobble 4s ease-in-out infinite;
+  --animate-bob: bob 1.8s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(var(--tilt, 0deg));
+    }
+    50% {
+      transform: translateY(-14px) rotate(calc(var(--tilt, 0deg) + 5deg));
+    }
+  }
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(0.85);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+  @keyframes wobble {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+  @keyframes bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-cream font-sans text-plum antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-butter);
+    color: var(--color-plum);
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-bubblegum-deep);
+    outline-offset: 3px;
+    border-radius: 0.75rem;
+  }
+}
+
+@layer components {
+  /* Scroll-triggered entrance. The Reveal component toggles .is-visible. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .eyebrow {
+    @apply font-sans text-xs font-extrabold uppercase tracking-[0.22em] text-bubblegum-deep;
+  }
+
+  /* Soft outlined "sticker" text used in the hero. */
+  .sticker-text {
+    text-shadow:
+      0 3px 0 rgb(59 29 94 / 0.12),
+      0 10px 24px rgb(59 29 94 / 0.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+}
