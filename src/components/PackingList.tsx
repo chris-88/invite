@@ -4,12 +4,11 @@ import { Reveal } from '@/components/Reveal'
 import { SectionHeading } from '@/components/SectionHeading'
 import { cn } from '@/lib/utils'
 
-const items = [
+const items: { emoji: string; label: string; note?: string }[] = [
   { emoji: '🩷', label: 'Pyjamas' },
-  { emoji: '🛏️', label: 'Sleeping bag or duvet' },
+  { emoji: '🛏️', label: 'Blanket' },
   { emoji: '🛋️', label: 'Pillow' },
   { emoji: '🪥', label: 'Toothbrush' },
-  { emoji: '🧸', label: 'Favourite teddy', note: 'optional!' },
   { emoji: '⚡', label: 'Plenty of energy' },
 ]
 

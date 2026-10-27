@@ -5,6 +5,20 @@ import { cn } from '@/lib/utils'
 
 const steps = [
   {
+    emoji: '🎮',
+    title: 'Games & Giggles',
+    text: 'Games, challenges and probably a little chaos!',
+    card: 'bg-bubblegum text-white rotate-1',
+    badge: 'bg-butter text-plum',
+    decoration: (
+      <>
+        <Sparkle className="absolute right-4 top-4 w-7 text-butter animate-twinkle" />
+        <Sparkle className="absolute right-14 top-12 w-4 text-white animate-twinkle" style={{ animationDelay: '.7s' }} />
+        <Sparkle className="absolute bottom-5 right-8 w-5 text-lavender animate-twinkle" style={{ animationDelay: '1.3s' }} />
+      </>
+    ),
+  },
+  {
     emoji: '🍕',
     title: 'Pizza Party',
     text: "We're kicking things off with plenty of pizza!",
@@ -30,20 +44,6 @@ const steps = [
             <span key={i} className="mt-0.5 h-2 w-3 rounded-sm bg-cream/80" />
           ))}
         </div>
-      </>
-    ),
-  },
-  {
-    emoji: '🎮',
-    title: 'Games & Giggles',
-    text: 'Games, challenges and probably a little chaos!',
-    card: 'bg-bubblegum text-white rotate-1',
-    badge: 'bg-butter text-plum',
-    decoration: (
-      <>
-        <Sparkle className="absolute right-4 top-4 w-7 text-butter animate-twinkle" />
-        <Sparkle className="absolute right-14 top-12 w-4 text-white animate-twinkle" style={{ animationDelay: '.7s' }} />
-        <Sparkle className="absolute bottom-5 right-8 w-5 text-lavender animate-twinkle" style={{ animationDelay: '1.3s' }} />
       </>
     ),
   },
